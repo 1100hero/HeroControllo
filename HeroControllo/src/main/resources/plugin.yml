@@ -1,0 +1,9 @@
+name: HeroControllo
+version: '${project.version}'
+main: org.hero.herocontrollo.HeroControllo
+api-version: 1.16
+authors: [ 1100hero ]
+description: Un semplice /controllo per Meraki By Hero
+commands:
+  controllo:
+    description: Manda una richiesta di controllo ad un player.

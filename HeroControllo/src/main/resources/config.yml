@@ -1,0 +1,70 @@
+# $$\   $$\                                $$$$$$\                       $$\                         $$\ $$\
+# $$ |  $$ |                              $$  __$$\                      $$ |                        $$ |$$ |
+# $$ |  $$ | $$$$$$\   $$$$$$\   $$$$$$\  $$ /  \__| $$$$$$\  $$$$$$$\ $$$$$$\    $$$$$$\   $$$$$$\  $$ |$$ | $$$$$$\
+# $$$$$$$$ |$$  __$$\ $$  __$$\ $$  __$$\ $$ |      $$  __$$\ $$  __$$\\_$$  _|  $$  __$$\ $$  __$$\ $$ |$$ |$$  __$$\
+# $$  __$$ |$$$$$$$$ |$$ |  \__|$$ /  $$ |$$ |      $$ /  $$ |$$ |  $$ | $$ |    $$ |  \__|$$ /  $$ |$$ |$$ |$$ /  $$ |
+# $$ |  $$ |$$   ____|$$ |      $$ |  $$ |$$ |  $$\ $$ |  $$ |$$ |  $$ | $$ |$$\ $$ |      $$ |  $$ |$$ |$$ |$$ |  $$ |
+# $$ |  $$ |\$$$$$$$\ $$ |      \$$$$$$  |\$$$$$$  |\$$$$$$  |$$ |  $$ | \$$$$  |$$ |      \$$$$$$  |$$ |$$ |\$$$$$$  |
+# \__|  \__| \_______|\__|       \______/  \______/  \______/ \__|  \__|  \____/ \__|       \______/ \__|\__| \______/
+#
+wrong-messages:
+  consoleInstance: "Luke cazzo, non puoi eseguire questo comando da console"
+  length: "&cIl comando inserito non esiste."
+  noRequest: "&cNon hai richieste di controllo in sospeso."
+  #- PERMESSI
+  #- Per inviare il controllo: "controllo.richiedi"
+  #- Per accettare il controllo: "controllo.accetta"
+  #- Per rifiutare il controllo: "controllo.rifiuta"
+  noPermission: "&cNon hai il permesso di eseguire questo comando."
+  noTarget: "&cIl giocatore &e%target% &cnon è in città"
+  selfCmd: "&cNon puoi eseguire il controllo su te stesso."
+  wayToFar: "&cSei troppo distante da &e%target% &cper poter inviare un controllo."
+  noWeaponInHand: "&cDevi avere un'arma in mano per poter eseguire il controllo."
+
+#- Distanza dalla quale un player deve essere da un altro player per inviare il controllo
+distance: 5
+
+#- Cambia il nome del player se il player ha il passamontagna
+anonymousName: "&7Anonimo"
+
+cooldown:
+  #- Il tempo è espresso in secondi e rappresenta il tempo prima di inviare nuovamente il comando.
+  duration: 10
+  inCooldownMessage: "&cAspetta altri &e%time%s &cprima di inviare nuovamente una richiesta di controllo."
+  #- Il tempo è espresso in secondi e rappresenta il tempo prima di che la richiesta di controllo scada.
+  durationExpire: 10
+
+sounds:
+  accepted:
+    sound: "ENTITY_PLAYER_LEVELUP"
+    volume: 4
+    pitch: 2
+  rejected:
+    sound: "ENTITY_VILLAGER_NO"
+    volume: 4
+    pitch: 2
+
+gui:
+  playerInvName: "&aInventario di %target%"
+  shulkerInv:
+    name: "&aZaino"
+    block: BARRIER
+    data: 1
+    position: 31
+    homeButtonName: "&c&lMENU"
+    homeLoreButton:
+    - "&7Clicca per tornare all'inventario principale"
+
+messages:
+  acceptedToPlayer: "&e%target% &aha accettato il controllo."
+  acceptedToTarget: "&aHai accettato il controllo."
+  rejectedToPlayer: "&e%target% &cha rifiutato il controllo."
+  rejectedToTarget: "&cHai rifiutato il controllo."
+  sentRequest: "&aHai inviato la richiesta di controllo a &e%target%"
+  receivedRequest: "&e%player% &ati ha mandato una richiesta di controllo, vuoi accettare?"
+  expiredRequest: "&7Richiesta di controllo scaduta."
+  clickableButtons:
+    yesMessage: "&9[&bAccetta&9]"
+    yesHover: "&aClick per farti controllare da &e%player%"
+    noMessage: "&9[&bRifiuta&9]"
+    noHover: "&cClick per rifiutare il controllo di &e%player%"
