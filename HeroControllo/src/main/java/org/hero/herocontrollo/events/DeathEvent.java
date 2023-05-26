@@ -15,10 +15,10 @@ public class DeathEvent implements Listener {
 
     @EventHandler
     public void onDeath(final PlayerDeathEvent event){
-        HeroControllo plugin = HeroControllo.getPlugin(HeroControllo.class);
-        Player player = event.getEntity();
+        var plugin = HeroControllo.getPlugin(HeroControllo.class);
+        var player = event.getEntity();
         if(!Controllo.getMap().containsKey(player.getUniqueId())) return;
-        Player p = Bukkit.getPlayer(Controllo.getMap().keySet().stream().filter(pl -> pl.equals(player.getUniqueId())).findAny().get());
+        var p = Bukkit.getPlayer(Controllo.getMap().keySet().stream().filter(pl -> pl.equals(player.getUniqueId())).findAny().get());
         if(p != null)
             Objects.requireNonNull(p).sendMessage(ColorAPI.color(plugin.getConfig().getString("messages.expiredRequest")));
         if(player != null)
