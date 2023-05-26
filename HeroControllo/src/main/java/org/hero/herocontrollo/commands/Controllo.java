@@ -18,7 +18,7 @@ import org.hero.herocontrollo.events.InventoryEvent;
 import org.hero.herocontrollo.inventories.InventoryGui;
 import org.hero.herocontrollo.thread.Task;
 import org.hero.herocontrollo.utils.ColorAPI;
-import org.hero.herocontrollo.utils.CooldownAPI;
+import org.hero.herocontrollo.utils.CountDownAPI;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -98,9 +98,9 @@ public class Controllo implements CommandExecutor, Listener {
                 player.sendMessage(ColorAPI.color(plugin.getConfig().getString("wrong-messages.selfCmd")));
                 return true;
             }
-            if(CooldownAPI.isInCooldown(player, player.getName())){
+            if(CountDownAPI.isInCooldown(player, player.getName())){
                 player.sendMessage(ColorAPI.color(plugin.getConfig().getString("cooldown.inCooldownMessage"))
-                        .replace("%time%", String.valueOf(CooldownAPI.getTimeLeft(player, player.getName()))));
+                        .replace("%time%", String.valueOf(CountDownAPI.getTimeLeft(player, player.getName()))));
                 return true;
             }
             if(player.getLocation().distance(Objects.requireNonNull(target).getLocation()) > plugin.getConfig().getInt("distance")){
@@ -143,7 +143,7 @@ public class Controllo implements CommandExecutor, Listener {
             noMessage.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/controllo rifiuta"));
             target.spigot().sendMessage(yesMessage, new TextComponent(" "), noMessage);
             Task.expireTask(target);
-            new CooldownAPI(player, player.getName(), plugin.getConfig().getInt("cooldown.duration")).start();
+            new CountDownAPI(player, player.getName(), plugin.getConfig().getInt("cooldown.duration")).start();
         }
         return true;
     }
